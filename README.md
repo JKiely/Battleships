@@ -13,3 +13,60 @@ Classes
 * Player
 * Ship
 * Board
+* Cell
+* Game
+
+Player
+------
+| Responsibiities | Collaborators |
+|-----------------|---------------|
+| Place ships on grid | ships, board |
+| Shoot at cell | board, ships |
+
+Ship
+----
+| Responsibiities | Collaborators |
+|-----------------|---------------|
+| Has a length |  |
+| Can have a name (carrier, battleship, cruiser, submarine, patrol boat) | game |
+| Can be hit | player |
+| Can be sunk | player |
+
+
+Opponent Board
+--------------
+| Responsibiities | Collaborators |
+|-----------------|---------------|
+| Must create/contain 100 cells | cell |
+| Must record hits | cell, ship, player |
+| Must record misses | cell |
+
+Player Board
+-------------
+| Responsibiities | Collaborators |
+|-----------------|---------------|
+| Must create/contain 100 cells | cell |
+| Must hold ships | ship |
+| Must recieve hits | player |
+
+Cell
+----
+| Responsibiities | Collaborators |
+|-----------------|---------------|
+| Hold a ship | ship |
+| Hold a sunk ship | ship |
+| Hold water | player board, opponent board |
+| Hold a shot | player board, opponent board |
+| Must tell opponent board hit or miss | opponent board |
+
+Game
+----
+| Responsibiities | Collaborators |
+|-----------------|---------------|
+| Initialise a game with two players | player |
+| Alternate turns between players | player |
+| Set up player board for each player | player board |
+| Set up opponent board for each player | opponent board |
+| Provide new fleet for each player | ship, player 
+| Check boards to see if all player ships have been sunk | player board |
+| Select winner | player |
