@@ -8,3 +8,8 @@ After each player has placed their ships on their own board they take turns to s
 
 When all of one player's ships have been hit the game finishes and the player who has ships remaining is the winner.
 
+Classes
+-------
+* Player
+* Ship
+* Board
