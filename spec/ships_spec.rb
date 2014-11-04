@@ -3,12 +3,12 @@ require 'ships'
 
 describe Ship do
 
-	let(:ship) {Ship.new(5)}
+	let(:ship) {Ship.new(4)}
 	let(:cell) {double :cell}
 
 
 	it "a ship should have a set size" do
-		expect(ship.size).to eq(5)
+		expect(ship.size).to eq(4)
 	end
 
 	it "should have hit points equal to its length" do
