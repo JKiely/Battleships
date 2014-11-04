@@ -15,9 +15,19 @@ describe Player do
 
 
 
+    it "should be able to place ship on board" do
+      expect(board).to receive(:place).with('A', 9, 'South')
+      player.place('A', 9, 'South')
 
+    end
 
+    it "should be able to set own name" do
 
+    end
+
+    it "can view opponent board" do
+
+    end
 
 
 
