@@ -20,4 +20,10 @@ describe Ship do
 		expect{ship.take_hit!}.to change{ship.hit_points}.by -1
 	end
 
+	it "should know when it is sunk" do
+		(ship.size).times { ship.take_hit! }
+		expect(ship.sunk?).to be(true)
+	end
+
+
 end

@@ -17,4 +17,8 @@ class Ship
 		@hit_points -= 1
 	end
 
+	def sunk?
+		@hit_points == 0
+	end
+
 end
