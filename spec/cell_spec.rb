@@ -1,23 +1,29 @@
 require 'cell'
 
-describe "A cell" do
+describe Cell do
 
-  it "must have an x coordinate" do
-    cell = Cell.new("x", 1)
-    expect(cell.x_axis).to eq "x"
+  it "must be able to contain water" do
+    cell = Cell.new(:water)
+    expect(cell.content).to be :water
   end
 
-  it "x coordinate must be a letter" do
-    expect {Cell.new(1, 1)}.to raise_error("Invalid Coordinate") 
+  it "must be able to contain a ship as well" do
+    cell = Cell.new(:ship)
+    expect(cell.content).to be :ship
   end
 
-    it "must have an y coordinate" do
-    cell = Cell.new("x", 1)
-    expect(cell.y_axis).to eq 1
+  it "hitting the cell must hit the content" do
+    water = double :water
+    cell = Cell.new(water)
+    expect(water).to receive(:hit!)
+    cell.hit
   end
 
-  it "y coordinate must be a number" do
-    expect{Cell.new("x", "y")}.to raise_error("Invalid Coordinate") 
+  it "has not been hit" do
+    water = double :water
+    cell = Cell.new(water)
+    expect(water).to receive(:hit?)
+    cell.hit?
   end
-  
+
 end
