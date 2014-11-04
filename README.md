@@ -32,14 +32,13 @@ Ship
 | Can be hit | player |
 | Can be sunk | player |
 
-
 Opponent Board
 --------------
 | Responsibiities | Collaborators |
 |-----------------|---------------|
 | Must create/contain 100 cells | cell |
-| Must record hits | cell, ship, player |
-| Must record misses | cell |
+| Must pass hits to cells | cell, player |
+| Must pass misses to cells | cell, player |
 
 Player Board
 -------------
@@ -47,12 +46,13 @@ Player Board
 |-----------------|---------------|
 | Must create/contain 100 cells | cell |
 | Must hold ships | ship |
-| Must recieve hits | player |
+| Must pass shots to cells | cell, player |
 
 Cell
 ----
 | Responsibiities | Collaborators |
 |-----------------|---------------|
+| Must receive shots from board | board |
 | Hold a ship | ship |
 | Hold a sunk ship | ship |
 | Hold water | player board, opponent board |
@@ -65,8 +65,9 @@ Game
 |-----------------|---------------|
 | Initialise a game with two players | player |
 | Alternate turns between players | player |
-| Set up player board for each player | player board |
-| Set up opponent board for each player | opponent board |
-| Provide new fleet for each player | ship, player 
+| Create new player board for each player | player board |
+| Create new opponent board for each player | opponent board |
+| Create new fleet for each player | ship, player |
+| Prompt player to position ships | player |
 | Check boards to see if all player ships have been sunk | player board |
 | Select winner | player |
