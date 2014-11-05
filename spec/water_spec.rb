@@ -2,15 +2,14 @@ require 'water'
 
 describe Water do
 
+  let(:water) { Water.new }
+
   it "has not been hit" do
-    water = Water.new
     expect(water).not_to be_hit
   end
 
   it "can be hit" do
-    water = Water.new
-    water.hit!
-    expect(water).to be_hit
+    expect(water.hit!).to be_hit
   end
 
 end

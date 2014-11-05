@@ -1,19 +1,11 @@
-class Cell
-
-  def initialize(content)
-    @content = content
-  end
-
-  def content
-    @content
-  end
+class Cell < Struct.new :content
 
   def hit
-    @content.hit!
+    content.hit!
   end
 
   def hit?
-    @content.hit?
+    content.hit?
   end
 
 end

@@ -10,6 +10,7 @@ class Water
 
  def hit!
   @hit = true
+  self
  end
 
 end
