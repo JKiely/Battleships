@@ -7,23 +7,21 @@ describe Player do
   let(:board) {double :board}
   let(:player) { Player.new(board)}
   let(:cell) {double :cell}
+  let(:ship_name) {double :ship_name}
 
     it 'should be able to declare cell it is shooting at' do
       expect(board).to receive(:fire_at)
       player.fire_at('A', 9)
     end
 
-
-
     it "should be able to place ship on board" do
-      expect(board).to receive(:place).with('A', 9, 'South')
-      player.place('A', 9, 'South')
-
+      expect(board).to receive(:place_ship).with(ship_name, 'A9', 'South')
+      player.place_ship(ship_name, 'A9', 'South')
     end
 
-    it "should be able to set own name" do
+    # it "should be able to set own name" do
 
-    end
+    # end
 
     it "can view opponent board" do
 
