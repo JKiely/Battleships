@@ -3,6 +3,7 @@ require 'cell'
 describe Cell do
 
   let(:water) { double :water }
+  let(:ship) { double :ship }
   let(:cell) { Cell.new(water) }
 
   it "must be able to contain water" do
@@ -22,6 +23,11 @@ describe Cell do
   it "has not been hit" do
     expect(water).to receive(:hit?)
     cell.hit?
+  end
+
+  it "should allow a ship to be placed" do
+    cell.place_ship(:ship)
+    expect(cell.content).to be :ship
   end
 
 end

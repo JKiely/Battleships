@@ -8,4 +8,8 @@ class Cell < Struct.new :content
     content.hit?
   end
 
+  def place_ship(ship)
+    self.content = ship
+  end
+
 end
