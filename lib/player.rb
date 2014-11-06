@@ -32,6 +32,13 @@ class Player
   	@board.place_ship(positions)
   end
 
+  def place_right(ship, col, row)
+  	positions = {(col + row).to_sym => ship}
+  	(ship.size - 1).times do |x|
+  		positions[(col + row.next!).to_sym] = ship
+  	end
+  	@board.place_ship(positions)
+  end
 
   
 
