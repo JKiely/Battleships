@@ -1,14 +1,7 @@
 require_relative './cell.rb'
 require_relative './water.rb'
 
-class Board
-
-  # def initialize(size)
-  #   @size = size
-  #   @board = @size.times.map{Cell.new(Water.new)}
-  #   @rows = @board.each_slice(10).map{|e| e}
-  #   @columns = @rows.transpose
-  # end
+module Board
 
   def initialize
     @coordinates = []
@@ -23,7 +16,7 @@ class Board
   def x_axis
     @x_axis = ('a'..'j').to_a
   end
-  
+
   def y_axis
     @y_axis = (1..10).to_a
   end
